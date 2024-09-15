@@ -25,8 +25,14 @@ import org.matsim.core.controler.Controler;
  */
 public class RunCarsharing {
 	static public void main(String[] args) throws ConfigurationException {
+		// Отладочное сообщение для проверки аргументов, переданных в программу
+		System.out.println("Arguments passed to the program: " + Arrays.toString(args));
+
+		// Проверка текущей рабочей директории
+		System.out.println("Current working directory: " + System.getProperty("user.dir"));
+
 		CommandLine cmd = new CommandLine.Builder(args) //
-				.requireOptions("config-path") //
+				.requireOptions("config-path") // <!--config-path-->
 				.build();
 
 		Config config = ConfigUtils.loadConfig(cmd.getOptionStrict("config-path"));
